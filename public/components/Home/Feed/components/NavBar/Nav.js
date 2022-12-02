@@ -15,7 +15,7 @@ export class MyNavBar extends HTMLElement {
         };
         this.attachShadow({ mode: 'open' });
         this.OpenBTN = this.ownerDocument.createElement("img");
-        this.OpenBTN.setAttribute('src', "./components/Home/Feed/components/Profile/Imgs/Upload.png");
+        this.OpenBTN.setAttribute('src', "./public/components/Home/Feed/components/Profile/Imgs/Upload.png");
         this.OpenBTN.className = "HeaderIcon";
         this.OpenBTN.id = "AddNewPostBtn";
         this.OpenBTN.onclick = (this.OpenModal);
@@ -34,14 +34,14 @@ export class MyNavBar extends HTMLElement {
 
             <div class="Header">
                 <section class="RecomendationCard">
-                    <img class="Logo" src="./components/Home/Feed/components/Profile/Imgs/Logo.png">
+                    <img class="Logo" src="./public/components/Home/Feed/components/Profile/Imgs/Logo.png">
                     <input type="text" class="search" placeholder="Search">
                     <div class="NavIconsSection">
-                        <img class="HeaderIcon" src="./components/Home/Feed/components/Profile/Imgs/Home.png">
-                        <img class="HeaderIcon" src="./components/Home/Feed/components/Profile/Imgs/Chat.jpg">
-                        <img class="HeaderIcon" id="FalseIcon" src="./components/Home/Feed/components/Profile/Imgs/Upload.png">
-                        <img class="HeaderIcon" src="./components/Home/Feed/components/Profile/Imgs/Explore.png">
-                        <img class="HeaderIcon" src="./components/Home/Feed/components/Profile/Imgs/heart.png">
+                        <img class="HeaderIcon" src="./public/components/Home/Feed/components/Profile/Imgs/Home.png">
+                        <img class="HeaderIcon" src="./public/components/Home/Feed/components/Profile/Imgs/Chat.jpg">
+                        <img class="HeaderIcon" id="FalseIcon" src="./public/components/Home/Feed/components/Profile/Imgs/Upload.png">
+                        <img class="HeaderIcon" src="./public/components/Home/Feed/components/Profile/Imgs/Explore.png">
+                        <img class="HeaderIcon" src="./public/components/Home/Feed/components/Profile/Imgs/heart.png">
                         <img class="HeaderIcon" id="UserProfilePicture" src="https://i.pinimg.com/originals/49/88/21/498821435726040a731f849a8c9d9244.png">    
                     </div>
                 </section>

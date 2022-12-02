@@ -8,7 +8,7 @@ class MyCounter extends HTMLElement {
         };
         this.attachShadow({ mode: "open" });
         this.button = this.ownerDocument.createElement("img");
-        this.button.setAttribute('src', "./components/Home/Feed/components/Profile/Imgs/heart_red.png");
+        this.button.setAttribute('src', "./public/components/Home/Feed/components/Profile/Imgs/heart_red.png");
         this.button.className = "FooterIcon";
         this.button.id = "HeartCounterIcon";
         this.button.addEventListener("click", this.handleClick);
@@ -24,12 +24,12 @@ class MyCounter extends HTMLElement {
                 <div id="PostFooter">
 
                     <div id="FooterIconSection">
-                        <img class="FooterIcon" src="./components/Home/Feed/components/Profile/Imgs/comment.png">
-                        <img class="FooterIcon" src="./components/Home/Feed/components/Profile/Imgs/share.png">
+                        <img class="FooterIcon" src="./public/components/Home/Feed/components/Profile/Imgs/comment.png">
+                        <img class="FooterIcon" src="./public/components/Home/Feed/components/Profile/Imgs/share.png">
                     </div>
 
-                    <img class="SwipePointsIcon" src="./components/Home/Feed/components/Profile/Imgs/swipe.jpg">
-                    <img class="FooterIcon" id="bookmark" src="./components/Home/Feed/components/Profile/Imgs/bookmark.png">
+                    <img class="SwipePointsIcon" src="./public/components/Home/Feed/components/Profile/Imgs/swipe.jpg">
+                    <img class="FooterIcon" id="bookmark" src="./public/components/Home/Feed/components/Profile/Imgs/bookmark.png">
                 </div>
 
                 <b>${this.count} likes</b>
