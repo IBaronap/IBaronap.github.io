@@ -1,0 +1,74 @@
+export var NewAttribute;
+(function (NewAttribute) {
+    NewAttribute["uid"] = "uid";
+    NewAttribute["ubication"] = "ubication";
+    NewAttribute["post"] = "post";
+    NewAttribute["caption"] = "caption";
+    NewAttribute["hashtag"] = "hashtag";
+})(NewAttribute || (NewAttribute = {}));
+export default class NewPost extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+    static get observedAttributes() {
+        const attrs = {
+            uid: null,
+            ubication: null,
+            post: null,
+            caption: null,
+            hashtag: null,
+        };
+        return Object.keys(attrs);
+    }
+    connectedCallback() {
+        this.render();
+        const btn = this.shadowRoot.querySelector('button');
+        btn === null || btn === void 0 ? void 0 : btn.addEventListener('click', () => {
+            const event = new CustomEvent('delete-user', {
+                detail: { uid: this.uid },
+                composed: true,
+            });
+            this.dispatchEvent(event);
+        });
+    }
+    attributeChangedCallback(propName, oldValue, newValue) {
+        switch (propName) {
+            default:
+                this[propName] = newValue;
+                break;
+        }
+        this.render();
+    }
+    render() {
+        if (this.shadowRoot) {
+            this.shadowRoot.innerHTML = `
+            <link href="./Style.css" rel="stylesheet">
+            <section class="PostCard">
+                
+                <section id="PostHeader">
+                    <img class="ProfilePic" src="https://i.pinimg.com/originals/49/88/21/498821435726040a731f849a8c9d9244.png">
+
+                    <div>
+                        <h4 class="username">Skeleton666</h4>
+                        <p class="Ubication">${this.ubication}</p>
+                    </div>
+
+                    <button class="DeleteBtn"><b>Delete</b></button>
+                </section>
+
+                <img class="PostPicture" alt="Posted Picture Not Found" src="${this.post}">
+
+                <my-counter></my-counter>
+                
+                <section id="UserCaptionSection">
+                    <p class="Caption"><b class="username">Skeleton666</b> ${this.caption} <t>${this.hashtag}</t> </p>
+                    <p class="Comment">No comments yet</p>
+                    <p class="Date">1 min ago</p>
+                </section>
+            </section>
+            `;
+        }
+    }
+}
+customElements.define("my-newpost", NewPost);
